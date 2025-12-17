@@ -1,9 +1,14 @@
-@Autowired StudentRepo repo
-@Override
-public StudentEntity postdata(StudentEntity stu){
-    return repo.save(stu);
-}
-@Overridepublic 
-public List<StudentEntity> getdata(){
-    return 
+package com.example.service.impl;
+import java.util.*;
+public class StudentServiceImpl implements StudentService{
+    @Override
+    public StudentEntity savedata(StudentEntity st){
+
+    }
+    @Override
+    public StudentEntity getidval(Long id){
+
+    }
+    @Override
+    public List<St
 }

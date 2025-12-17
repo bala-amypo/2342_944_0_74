@@ -1,41 +1,52 @@
-package com.example.demo.newentity; 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
-@Entity
-@Table(name="Student")
-public class Validation{
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private long id
-    @NotBlank(message="No spaces")
+package com.example.demo.entity;
+
+import java.time.LocalDate;
+
+public class StudentEntity {
     private String name;
-    @NotBlank(message="No blank space")
-    @Email(message="Invalid format")
+    private int id;
+    private LocalDate dob;
     private String email;
-    public Validation(Long id,@NotBlank(message="No spaces") String name,@NotBlank(message="No blank space") @Email(message="Invalid format") String email;){
-        this.id=id;
-        this.name=name;
-        this.email=email;
+    private float cgpa;
+    public StudentEntity(String name, int id, LocalDate dob, String email, float cgpa) {
+        this.name = name;
+        this.id = id;
+        this.dob = dob;
+        this.email = email;
+        this.cgpa = cgpa;
     }
-    public Validation(){
+    public StudentEntity() {
     }
-    public Long getId(){
-        return id;
-    }
-    public void setId(Long id){
-        this.id=id;
-    }
-    public string getName(){
+    public String getName() {
         return name;
     }
-    public void setName(String name){
-        this.name=name;
+    public void setName(String name) {
+        this.name = name;
     }
-    public string getEmail(){
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public LocalDate getDob() {
+        return dob;
+    }
+    public void setDob(LocalDate dob) {
+        this.dob = dob;
+    }
+    public String getEmail() {
         return email;
     }
-    public void setEmail(String email){
-        this.email=email;
+    public void setEmail(String email) {
+        this.email = email;
     }
-}
+    public float getCgpa() {
+        return cgpa;
+    }
+    public void setCgpa(float cgpa) {
+        this.cgpa = cgpa;
+    }
+    
+
 }

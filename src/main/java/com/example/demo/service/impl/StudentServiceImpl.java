@@ -1,5 +1,9 @@
 package com.example.service.impl;
 import java.util.*;
+import org.springframework.stereotype.Service;
+import com.example.demo.entity.StudentEntity;
+import com.example.demo.service.StudentService
+@Service
 public class StudentServiceImpl implements StudentService{
     @Override
     public StudentEntity savedata(StudentEntity st){
@@ -10,5 +14,13 @@ public class StudentServiceImpl implements StudentService{
 
     }
     @Override
-    public List<St
+    public List<StudentEntity> getall(){
+
+    }
+    @Override
+    public StudentEntity update(Long id,StudentEntity st){
+
+    }
+    @Override
+    public void delete(Long id){}
 }

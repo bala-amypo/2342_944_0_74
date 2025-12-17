@@ -1,8 +1,8 @@
 package com.example.demo.Service;
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
 import com.example.demo.Entity.StudentEntity;
 public interface StudentService{
-    StudentEntity savedata(StudentEntity stu);      
-    StudentEntity getidval(Long id);
-    
+    StudentEntity savedata(StudentEntity st);
+    StudentEntity getidval(Long id)
 }

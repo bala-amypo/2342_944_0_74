@@ -15,7 +15,7 @@ public class StudentServiceImpl implements StudentService{
     }
     @Override
     public StudentEntity getidval(Long id){
-        return rep.get(id);
+        return rep.findby(id);
     }
     @Override
     public List<StudentEntity> getall(){

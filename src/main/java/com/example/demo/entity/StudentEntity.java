@@ -1,4 +1,4 @@
-package com.example.demo.newentity;
+package com.example.demo.entity;
 
   import jakarta.persistence.GenerationValue;
   import jakarta.persistence.GenerationType;
@@ -6,19 +6,21 @@ package com.example.demo.newentity;
   import jakarta.validation.constranints.*;
   
  
- @NewfileEntity@Table(name="Student")
+ @StudentEntity
+ @Table(name="Student")
  
- public class NewfileEntity {
+ public class StudentEntity {
     @Id 
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
     @NotBlank(message = "should not contain spaces")
+    @Column(unique=true)
     private String name;
     @column(name=unique)
-     @NotBlank(message = "no blank allowed")
-     @Email(message = "invalid format")
+    @NotBlank(message = "no blank allowed")
+    @Email(message = "invalid format")
     private String email;
-    public NewfileEntity(long id, @NotBlank(message = "should not contain spaces") String name,   @NotBlank(message = "no blank allowed") String email) {
+    public StudentEntity(long id, @NotBlank(message = "should not contain spaces") String name,   @NotBlank(message = "no blank allowed") String email) {
       this.id = id;
       this.name = name;
       this.email = email;
@@ -42,4 +44,4 @@ package com.example.demo.newentity;
        this.email = email;
     }
      
- }t
+ }

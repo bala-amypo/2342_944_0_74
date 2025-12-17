@@ -23,11 +23,13 @@ public class StudentServiceImpl implements StudentService{
     }
     @Override
     public StudentEntity update(Long id,StudentEntity st){
-        return rep.updateval(jk\7/*+-
-        id,st);
+        StudentEntity existing = getidval(id);
+        existing.setName(st.getName());
+        existing.setEmail(st.getEmail());
+        return rep.save(existing);
     }
     @Override
     public void delete(Long id){
-        
+        delete(Long id);
     }
 }

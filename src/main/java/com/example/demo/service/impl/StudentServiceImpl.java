@@ -19,11 +19,12 @@ public class StudentServiceImpl implements StudentService{
     }
     @Override
     public List<StudentEntity> getall(){
-        return rep.all();
+        return rep.findall();
     }
     @Override
     public StudentEntity update(Long id,StudentEntity st){
-        return rep.updateval(id,st);
+        return rep.updateval(jk\7/*+-
+        id,st);
     }
     @Override
     public void delete(Long id){

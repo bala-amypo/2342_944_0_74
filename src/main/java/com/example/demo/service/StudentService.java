@@ -7,5 +7,5 @@ public interface StudentService{
     StudentEntity getidval(Long id);
     List<StudentEntity> getall();
     StudentEntity update(Long id,StudentEntity st);
-    void<StudentEntity> delete(Long id);
+    void delete(Long id);
 }

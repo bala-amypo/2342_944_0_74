@@ -1,52 +1,41 @@
-package com.example.demo.entity;
-
-import java.time.LocalDate;
-
-public class StudentEntity {
+package com.example.demo.newentity; 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+@Entity
+@Table(name="Student")
+public class Validation{
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private long id
+    @NotBlank(message="No spaces")
     private String name;
-    private int id;
-    private LocalDate dob;
+    @NotBlank(message="No blank space")
+    @Email(message="Invalid format")
     private String email;
-    private float cgpa;
-    public StudentEntity(String name, int id, LocalDate dob, String email, float cgpa) {
-        this.name = name;
-        this.id = id;
-        this.dob = dob;
-        this.email = email;
-        this.cgpa = cgpa;
+    public Validation(Long id,@NotBlank(message="No spaces") String name,@NotBlank(message="No blank space") @Email(message="Invalid format") String email;){
+        this.id=id;
+        this.name=name;
+        this.email=email;
     }
-    public StudentEntity() {
+    public Validation(){
     }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public int getId() {
+    public Long getId(){
         return id;
     }
-    public void setId(int id) {
-        this.id = id;
+    public void setId(Long id){
+        this.id=id;
     }
-    public LocalDate getDob() {
-        return dob;
+    public string getName(){
+        return name;
     }
-    public void setDob(LocalDate dob) {
-        this.dob = dob;
+    public void setName(String name){
+        this.name=name;
     }
-    public String getEmail() {
+    public string getEmail(){
         return email;
     }
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String email){
+        this.email=email;
     }
-    public float getCgpa() {
-        return cgpa;
-    }
-    public void setCgpa(float cgpa) {
-        this.cgpa = cgpa;
-    }
-    
-
+}
 }

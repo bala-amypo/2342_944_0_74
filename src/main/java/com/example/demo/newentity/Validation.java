@@ -6,8 +6,25 @@ public class Validation{
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id
     @NotBlank(message="No spaces")
-    private string name;
+    private String name;
     @NotBlank(message="No blank space")
     @Email(message="Invalid format")
-    private string email;
+    private String email;
+    public Validation(Long id,long id,@NotBlank(message="No spaces") string name,@NotBlank(message="No blank space") @Email(message="Invalid format") string email;){
+        this.id=id;
+        this.name=name;
+        this.email=email;
+    }
+    public Validation(){
+    }
+    public Long getId(){
+        return id;
+    }
+    public void setId(Long id){
+        this.id=id;
+    }
+    public string getName(){
+        return name;
+    }
+    public void setName(String name)
 }

@@ -1,52 +1,45 @@
-package com.example.demo.entity;
+package com.example.demo.newentity;
 
-import java.time.LocalDate;
-
-public class StudentEntity {
+  import jakarta.persistence.GenerationValue;
+  import jakarta.persistence.GenerationType;
+  import jakarta.persistence.Id;
+  import jakarta.validation.constranints.*;
+  
+ 
+ @NewfileEntity@Table(name="Student")
+ 
+ public class NewfileEntity {
+    @Id 
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private long id;
+    @NotBlank(message = "should not contain spaces")
     private String name;
-    private int id;
-    private LocalDate dob;
+    @column(name=unique)
+     @NotBlank(message = "no blank allowed")
+     @Email(message = "invalid format")
     private String email;
-    private float cgpa;
-    public StudentEntity(String name, int id, LocalDate dob, String email, float cgpa) {
-        this.name = name;
-        this.id = id;
-        this.dob = dob;
-        this.email = email;
-        this.cgpa = cgpa;
+    public NewfileEntity(long id, @NotBlank(message = "should not contain spaces") String name,   @NotBlank(message = "no blank allowed") String email) {
+      this.id = id;
+      this.name = name;
+      this.email = email;
     }
-    public StudentEntity() {
+    public long getId() {
+       return id;
+    }
+    public void setId(long id) {
+       this.id = id;
     }
     public String getName() {
-        return name;
+       return name;
     }
     public void setName(String name) {
-        this.name = name;
-    }
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
-    public LocalDate getDob() {
-        return dob;
-    }
-    public void setDob(LocalDate dob) {
-        this.dob = dob;
+       this.name = name;
     }
     public String getEmail() {
-        return email;
+       return email;
     }
     public void setEmail(String email) {
-        this.email = email;
+       this.email = email;
     }
-    public float getCgpa() {
-        return cgpa;
-    }
-    public void setCgpa(float cgpa) {
-        this.cgpa = cgpa;
-    }
-    
-
-}
+     
+ }t

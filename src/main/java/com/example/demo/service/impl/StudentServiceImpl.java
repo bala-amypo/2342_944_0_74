@@ -11,7 +11,7 @@ public class StudentServiceImpl implements StudentService{
     }
     @Override
     public StudentEntity savedata(StudentEntity st){
-
+        return rep.save(st);
     }
     @Override
     public StudentEntity getidval(Long id){

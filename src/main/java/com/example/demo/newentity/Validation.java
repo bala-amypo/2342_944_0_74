@@ -10,7 +10,7 @@ public class Validation{
     @NotBlank(message="No blank space")
     @Email(message="Invalid format")
     private String email;
-    public Validation(Long id,long id,@NotBlank(message="No spaces") string name,@NotBlank(message="No blank space") @Email(message="Invalid format") string email;){
+    public Validation(Long id,@NotBlank(message="No spaces") String name,@NotBlank(message="No blank space") @Email(message="Invalid format") String email;){
         this.id=id;
         this.name=name;
         this.email=email;
@@ -26,5 +26,13 @@ public class Validation{
     public string getName(){
         return name;
     }
-    public void setName(String name)
+    public void setName(String name){
+        this.name=name;
+    }
+    public string getEmail(){
+        return email;
+    }
+    public void setEmail(String email){
+        this.email=email;
+    }
 }

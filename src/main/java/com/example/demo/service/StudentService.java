@@ -6,5 +6,6 @@ public interface StudentService{
     StudentEntity savedata(StudentEntity st);
     StudentEntity getidval(Long id);
     List<StudentEntity> getall();
-    StudentEntity update()
+    StudentEntity update(Long id,StudentEntity st);
+    void<StudentEntity> delete(Long id);
 }

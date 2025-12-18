@@ -1,45 +1,41 @@
 package com.example.demo.entity;
 
-  import jakarta.persistence.*;
-  import jakarta.validation.constranints.*;
-  
- 
- @StudentEntity
- @Table(name="Student")
- 
- public class StudentEntity {
-    @Id 
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private long id;
-    @NotBlank(message = "should not contain spaces")
-    @Column(unique=true)
+
+
+public class StudentEntity {
+   
     private String name;
-    @column(name=unique)
-    @NotBlank(message = "no blank allowed")
-    @Email(message = "invalid format")
+    private int id;
     private String email;
-    public StudentEntity(long id, @NotBlank(message = "should not contain spaces") String name,   @NotBlank(message = "no blank allowed") String email) {
-      this.id = id;
-      this.name = name;
-      this.email = email;
-    }
-    public long getId() {
-       return id;
-    }
-    public void setId(long id) {
-       this.id = id;
-    }
     public String getName() {
-       return name;
+        return name;
     }
-    public void setName(String name) {
-       this.name = name;
+    public int getId() {
+        return id;
     }
     public String getEmail() {
-       return email;
+        return email;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setId(int id) {
+        this.id = id;
     }
     public void setEmail(String email) {
-       this.email = email;
+        this.email = email;
     }
-     
- }
+    public StudentEntity(String name, int id, String email) {
+        this.name = name;
+        this.id = id;
+        this.email = email;
+    }
+    public StudentEntity() {
+    }
+    
+
+    
+    
+    
+
+}

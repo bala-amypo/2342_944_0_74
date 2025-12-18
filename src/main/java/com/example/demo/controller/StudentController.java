@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @RestController
 public class StudentController {
     @Autowired
-    Studentservice src;
+    StudentService src;
     @PostMapping("/post")
     public StudentEntity postdata(@RequestBody StudentEntity st) {
         return src.savedata(st);
